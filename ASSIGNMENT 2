@@ -1,0 +1,148 @@
+DECENDING ORDER
+#include <iostream>
+using namespace std;
+
+void sortArray(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] < arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[] = {1, 5, 8, 3, 9};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    sortArray(arr, n);
+
+    cout << "Array in descending order: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+USE OF CATCH BLOCK WITH ARGUMENT
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+
+void processInteger(int num) {
+    if (num == 0) {
+        throw invalid_argument("Division by zero is not allowed.");
+    }
+
+    cout << "100 / " << num << " = " << 100.0 / num << endl;
+}
+
+void processString(const string& str) {
+    if (str.length() > 10) {
+        throw length_error("String length is too long.");
+    }
+
+    cout << "The string is: " << str << endl;
+}
+
+int main() {
+    try {
+        processInteger(0);
+    } catch (const invalid_argument& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    try {
+        processString("Hello, World!");
+    } catch (const length_error& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+
+MAMALS AND MARINE ANIMALS:
+#include <iostream>
+using namespace std;
+
+// Base class Mammals
+class Mammals {
+public:
+    void mammalFunction() {
+        cout << "This is a function in the Mammals class." << endl;
+    }
+};
+
+// Base class MarineAnimals
+class MarineAnimals {
+public:
+    void marineFunction() {
+        cout << "This is a function in the MarineAnimals class." << endl;
+    }
+};
+
+// Derived class BlueWhale
+class BlueWhale : public Mammals, public MarineAnimals {
+public:
+    void blueWhaleFunction() {
+        cout << "This is a function in the BlueWhale class." << endl;
+    }
+};
+
+int main() {
+    BlueWhale whale;
+
+    whale.mammalFunction();
+    whale.marineFunction();
+    whale.blueWhaleFunction();
+
+    return 0;
+}
+
+RECTANGLE:
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    float length;
+    float breadth;
+
+public:
+    Rectangle() { // constructor with no parameters
+        length = 0;
+        breadth = 0;
+    }
+
+    Rectangle(float l) { // constructor with one parameter
+        length = l;
+        breadth = l;
+    }
+
+    Rectangle(float l, float b) { // constructor with two parameters
+        length = l;
+        breadth = b;
+    }
+
+    void calculateArea() {
+        cout << "The area of the rectangle is: " << length * breadth << endl;
+    }
+};
+
+int main() {
+    Rectangle r1; // object with no parameters
+    Rectangle r2(5); // object with one parameter
+    Rectangle r3(5, 7); // object with two parameters
+
+    r1.calculateArea();
+    r2.calculateArea();
+    r3.calculateArea();
+
+    return 0;
+}
