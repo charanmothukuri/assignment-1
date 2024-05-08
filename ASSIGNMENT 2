@@ -71,7 +71,6 @@ MAMALS AND MARINE ANIMALS:
 #include <iostream>
 using namespace std;
 
-// Base class Mammals
 class Mammals {
 public:
     void mammalFunction() {
@@ -79,7 +78,6 @@ public:
     }
 };
 
-// Base class MarineAnimals
 class MarineAnimals {
 public:
     void marineFunction() {
@@ -87,7 +85,6 @@ public:
     }
 };
 
-// Derived class BlueWhale
 class BlueWhale : public Mammals, public MarineAnimals {
 public:
     void blueWhaleFunction() {
@@ -115,17 +112,17 @@ private:
     float breadth;
 
 public:
-    Rectangle() { // constructor with no parameters
+    Rectangle() { 
         length = 0;
         breadth = 0;
     }
 
-    Rectangle(float l) { // constructor with one parameter
+    Rectangle(float l) { 
         length = l;
         breadth = l;
     }
 
-    Rectangle(float l, float b) { // constructor with two parameters
+    Rectangle(float l, float b) { 
         length = l;
         breadth = b;
     }
@@ -136,10 +133,9 @@ public:
 };
 
 int main() {
-    Rectangle r1; // object with no parameters
-    Rectangle r2(5); // object with one parameter
-    Rectangle r3(5, 7); // object with two parameters
-
+    Rectangle r1; 
+    Rectangle r2(5); 
+    Rectangle r3(5, 7); 
     r1.calculateArea();
     r2.calculateArea();
     r3.calculateArea();
